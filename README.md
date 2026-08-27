@@ -50,6 +50,8 @@ classDiagram
 
     DRMTokenValidator ..> TokenValidationResult : retorna status interno
 </pre>
+<img width="1725" height="942" alt="image" src="https://github.com/user-attachments/assets/d974d4e7-478c-4bad-9efc-1ea4a8a31214" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -98,6 +100,8 @@ graph TD
     Session --> Catalog : busca URL do vídeo
     Session --> CDN : requisita manifesto HLS
 </pre>
+<img width="1181" height="715" alt="image" src="https://github.com/user-attachments/assets/338f5c99-3af3-4870-a963-1e33d83c6e0f" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -147,6 +151,8 @@ classDiagram
     StreamingSessionService --> ICDNProvider : utiliza
     CDNProviderStub ..|> ICDNProvider : implementa
 </pre>
+<img width="1795" height="857" alt="image" src="https://github.com/user-attachments/assets/cfb9e2aa-e7c1-4597-b150-2316512e60ac" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -194,6 +200,8 @@ classDiagram
     VideoRepositoryDriver --> VideoRepository : exercita (Driver)
     VideoRepository --> MediaStorageS3 : consome
 </pre>
+<img width="961" height="945" alt="image" src="https://github.com/user-attachments/assets/551151c7-b790-4ada-9055-bb8888a4ff70" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -237,6 +245,8 @@ sequenceDiagram
     Cliente->>CDN: requisitarManifestoHLS("filme-456", Token)
     CDN-->>Cliente: 200 OK (playlist.m3u8)
 </pre>
+<img width="1642" height="851" alt="image" src="https://github.com/user-attachments/assets/abb0711d-a74e-48d8-be86-f50aa46d2fa6" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -279,6 +289,8 @@ graph LR
     Suite -->|Re-executa cenários salvos| CatalogService
     Suite -->|Valida compatibilidade| RecEngine
 </pre>
+<img width="1897" height="511" alt="image" src="https://github.com/user-attachments/assets/299b15e2-2eb7-436e-aa6b-5576ffc253ff" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -322,6 +334,8 @@ graph LR
     Usuario --> UC1
     Usuario --> UC2
 </pre>
+<img width="1157" height="477" alt="image" src="https://github.com/user-attachments/assets/b09c4bc8-b2fd-495e-afca-d88bb420852c" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -370,6 +384,8 @@ sequenceDiagram
     Gateway-->>C1: Tempo de resposta total < 200ms
     Gateway-->>C2: Tempo de resposta total < 200ms
 </pre>
+<img width="1626" height="702" alt="image" src="https://github.com/user-attachments/assets/25c973ea-98fb-4369-9142-c87706162c49" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -415,6 +431,8 @@ graph TD
     Auth --x|4. Bloqueia Acesso (401 Unauthorized)| Attacker
     Auth -.-x|5. Impede Acesso Direto à Mídia| Media
 </pre>
+<img width="985" height="748" alt="image" src="https://github.com/user-attachments/assets/347f2cce-3dfc-452a-826c-98f8a951e184" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -470,6 +488,8 @@ sequenceDiagram
     Player->>CDN: 4. Baixar segmentos de vídeo (Chunks HLS)
     CDN-->>Player: Fluxo contínuo de bytes de mídia
 </pre>
+<img width="1651" height="805" alt="image" src="https://github.com/user-attachments/assets/ef382093-3e4f-4019-be27-3b7f55341655" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -511,6 +531,8 @@ graph TD
     App -->|3. Envia métricas e relatórios de falha| Telemetry
     DevTeam -->|4. Aplica correções imediatas| App
 </pre>
+<img width="1762" height="437" alt="image" src="https://github.com/user-attachments/assets/51ba7319-5979-4fc9-b972-970b244e91c0" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -551,6 +573,8 @@ graph LR
     AppBeta -->|2. Captura automática de exceções| Crashlytics
     BetaUsers -->|3. Submetem opiniões e bugs| FeedbackService
 </pre>
+<img width="1141" height="366" alt="image" src="https://github.com/user-attachments/assets/fac27141-d60f-4dac-adf9-e05cdf4f8115" />
+
 
 #### Documentação do Cenário de Teste
 
@@ -593,6 +617,8 @@ graph TD
     Client -->|Valida Termos do Contrato| UAT2
     Client -->|Valida Termos do Contrato| UAT3
 </pre>
+<img width="1162" height="742" alt="image" src="https://github.com/user-attachments/assets/60961851-3efe-4da8-ac99-2a443475b216" />
+
 
 #### Documentação do Cenário de Teste
 
