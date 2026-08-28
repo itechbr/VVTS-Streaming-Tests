@@ -21,7 +21,29 @@ Para garantir consistência técnica e rastreabilidade nos 13 cenários de teste
   * `IPaymentGateway` (Interface de processamento de assinaturas).
 * **Infraestrutura:** `UserDatabase` (Banco de dados de usuários), `MediaStorageS3` (Armazenamento de mídia bruta).
 
+<img width="1591" height="828" alt="image" src="https://github.com/user-attachments/assets/9af1db2f-ff92-4f2b-900d-e25020815a65" />
+
+
 ---
+
+## Sumário de Testes
+
+* [1. Teste de Unidade (Unit Testing)](#1-teste-de-unidade-unit-testing)
+  * [1.1 Verificação de lógica atômica em componente/classe isolada](#11-verificação-de-lógica-atômica-em-componenteclasse-isolada)
+* [2. Teste de Integração (Integration Testing)](#2-teste-de-integração-integration-testing)
+  * [2.1 Integração Não Incremental (Big Bang)](#21-integração-não-incremental-big-bang)
+  * [2.2 Integração Incremental Top-Down com Stubs](#22-integração-incremental-top-down-com-stubs)
+  * [2.3 Integração Incremental Bottom-Up (Ascendente) com uso de Drivers](#23-integração-incremental-bottom-up-ascendente-com-uso-de-drivers)
+  * [2.4 Teste de Regressão Automatizado](#24-teste-de-regressão-automatizado)
+  * [2.5 Testes de Integração de Fumaça (Smoke Testing)](#25-testes-de-integração-de-fumaça-smoke-testing)
+* [3. Teste de Sistema (System Testing)](#3-teste-de-sistema-system-testing)
+  * [3.1 Testes Funcionais Focado em Casos de Uso](#31-testes-funcionais-focado-em-casos-de-uso)
+  * [3.2 Testes Não Funcionais: Desempenho, Carga e Stress](#32-testes-não-funcionais-desempenho-carga-e-stress)
+  * [3.3 Testes Não Funcionais: Segurança e Penetrabilidade](#33-testes-não-funcionais-segurança-e-penetrabilidade)
+* [4. Teste de Aceitação (Acceptance Testing)](#4-teste-de-aceitação-acceptance-testing)
+  * [4.1 Teste Alpha (Ambiente Interno)](#41-teste-alpha-ambiente-interno)
+  * [4.2 Teste Beta (Ambiente Externo)](#42-teste-beta-ambiente-externo)
+  * [4.3 Teste de Aceitação do Usuário Final / Contratante (UAT)](#43-teste-de-aceitação-do-usuário-final--contratante-uat)
 
 ## 1. Teste de Unidade (Unit Testing)
 
