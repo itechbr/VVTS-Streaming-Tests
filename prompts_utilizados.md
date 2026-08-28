@@ -14,33 +14,55 @@ O uso da IA Generativa foi pautado pela **Validação Crítica Obrigatória**, g
 
 ---
 
-## 🛠️ 1. Mapeamento e Adaptação dos Prompts Base
+## 🛠️ 1. Mapeamento dos 12 Prompts Essenciais do Projeto
 
-Abaixo estão registrados os prompts originais propostos no guia de laboratório (originalmente focados no domínio de *Gateway de Pagamentos Pix*) e como foram adaptados para a arquitetura da *StreamFlix*.
+Abaixo estão registrados os 12 prompts fundamentais utilizados durante todo o ciclo de desenvolvimento: desde a concepção do domínio, geração dos 13 diagramas de teste, refinamentos arquiteturais até as correções de sintaxe Mermaid.
 
-### 1.1 Teste de Unidade (Unit Testing)
-* **Prompt Adaptado:** *"Atue como um Engenheiro de QA Sênior. Crie o cenário 1.1 (Verificação de Lógica Atômica) para uma plataforma de streaming (StreamFlix). Foque na classe `DRMTokenValidator`. Gere o Diagrama de Classes em Mermaid e preencha as seções: Componente sob Teste, Operação do Teste e Detecção de Defeitos."*
+### 1. Concepção do Domínio e Arquitetura Base
+> "Preciso criar um relatório de testes para a disciplina de Engenharia de Software. O domínio será uma plataforma de streaming de vídeo de alta escala chamada StreamFlix. Monte a arquitetura base do sistema mapeando componentes como cliente, autenticação, catálogo, sessão de streaming, DRM e CDN."
 
-### 1.2 Teste de Integração (Integration Testing)
-* **Prompt Adaptado:** *"Gere os cenários de Teste de Integração (2.1 a 2.5) para a StreamFlix. Adapte a integração Big Bang para `AuthService`, `VideoCatalogService`, `StreamingSessionService` e `AkamaiCDNProvider`. No Top-Down, utilize um `CDNProviderStub`. No Bottom-Up, crie um `VideoRepositoryDriver`. Para o Smoke Test, utilize um diagrama de sequência cobrindo login e obtenção de manifesto HLS. No Teste de Regressão, modele o impacto do novo motor de recomendação."*
+### 2. Mapeamento de Testes de Unidade e Isolamento
+> "Gere a documentação e os diagramas para os Testes de Unidade focados no módulo de DRM (`DRMTokenValidator`), demonstrando o teste atômico e o isolamento de componentes sem dependências externas."
 
-### 1.3 Teste de Validação (Validation Testing)
-* **Prompt Adaptado:** *"Elabore os cenários de Teste de Validação (3.1 a 3.3). Modele o Caso de Uso de reprodução em alta definição (1080p/4K), o Teste de Desempenho com foco no tempo de resposta do API Gateway sob carga (<200ms) e o Teste de Segurança cobrindo a validação contra adulteração de tokens DRM."*
+### 3. Diagramação das Estratégias de Integração (Big Bang vs. Incremental)
+> "Crie os diagramas Mermaid que explicam as abordagens de Testes de Integração: o modelo Big Bang e as abordagens incrementais Top-Down (utilizando Stubs) e Bottom-Up (utilizando Drivers)."
 
-### 1.4 Teste de Sistema e Aceitação (System & Acceptance Testing)
-* **Prompt Adaptado:** *"Desenvolva os cenários de Teste de Sistema e Aceitação (4.1 a 4.4) para a StreamFlix. Crie o teste E2E cobrindo a jornada completa do usuário, o Teste Alpha no ambiente interno da empresa, o Teste Beta com telemetria via Crashlytics em dispositivos reais e o Teste de Aceitação (UAT) com critérios de homologação do negócio."*
+### 4. Detalhamento de Mocks, Stubs e Drivers no Contexto de Mídia
+> "Explique a diferença técnica entre o uso de um Stub para simular a resposta da CDN no teste Top-Down e o uso de um Driver para simular a chamada ao repositório de vídeo no teste Bottom-Up."
+
+### 5. Cobertura de Testes de Regressão em Alterações de Código
+> "Gere a representação dos testes de regressão automatizados para quando alteramos o algoritmo do motor de recomendação no `VideoCatalogService`, garantindo a compatibilidade com contratos anteriores."
+
+### 6. Execução de Testes de Fumaça (Smoke Testing)
+> "Crie o diagrama do Smoke Test para validar o health check crítico do build de streaming, garantindo a execução do caminho básico de autenticação, catálogo e manifesto HLS."
+
+### 7. Validação de Casos de Uso em Testes de Sistema
+> "Elabore um diagrama e uma explicação para o Teste de Sistema Funcional focado no Caso de Uso 'Reproduzir Vídeo em Alta Definição', integrando desde o login até a reprodução HLS."
+
+### 8. Testes Não Funcionais: Carga, Desempenho e Stress
+> "Modele um cenário de Teste de Carga e Stress no `StreamingSessionService` usando Mermaid para ilustrar múltiplas requisições concorrentes e a validação do tempo de resposta via Redis Cache."
+
+### 9. Testes Não Funcionais: Segurança e Penetrabilidade (PenTest)
+> "Crie o diagrama de PenTest simulando uma tentativa de ataque com token JWT adulterado para tentar acessar fragmentos de vídeo no storage S3, mostrando o bloqueio pelo WAF e AuthService."
+
+### 10. Mapeamento dos Ambientes de Aceitação (Alpha e Beta)
+> "Modele o fluxo do Teste Alpha em ambiente de laboratório controlado e do Teste Beta em ambiente real de produção com telemetria via Crashlytics para captura automática de exceções."
+
+### 11. Estruturação dos Critérios de Homologação (UAT)
+> "Elabore a matriz de critérios de aceitação pelo cliente do negócio (UAT), validando métricas como playback em menos de 2 segundos, cobrança recorrente exata e suporte a múltiplos perfis."
+
+### 12. Padronização e Correção de Sintaxe Mermaid para o GitHub
+> "Os blocos de diagrama Mermaid não estão renderizando no README do GitHub. Reconverta todos os diagramas aplicando estritamente a sintaxe nativa com três crases (```mermaid) para exibição correta."
 
 ---
 
 ## 🔄 2. Prompts de Refinamento e Formatação Técnica
 
-Durante o desenvolvimento do laboratório, foram utilizados prompts de refinamento para garantir rigor técnico e compatibilidade com o renderizador de Markdown do GitHub:
+Durante o desenvolvimento do laboratório, foram utilizados prompts de refinamento suplementares para garantir o alinhamento arquitetural e a consistência visual no GitHub:
 
 1. **Padronização da Arquitetura Base:**
    * *"Defina uma arquitetura padronizada no item 0 contendo cliente, serviços de backend, interfaces e banco de dados para garantir a rastreabilidade dos 13 cenários de teste."*
-2. **Ajuste na Renderização dos Diagramas Mermaid:**
-   * *"Ajuste o formato dos blocos de código Mermaid para utilizar tags `<pre class="mermaid">` de modo a evitar quebras de sintaxe no leitor do repositório."*
-3. **Consistência na Estrutura de Documentação:**
+2. **Consistência na Estrutura de Documentação:**
    * *"Garanta que todos os 13 cenários possuam exatamente as subseções: Componente sob Teste, Operação do Teste e Detecção de Defeitos."*
 
 ---
