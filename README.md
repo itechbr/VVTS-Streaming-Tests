@@ -29,21 +29,24 @@ Para garantir consistência técnica e rastreabilidade nos 13 cenários de teste
 ## Sumário de Testes
 
 * [1. Teste de Unidade (Unit Testing)](#1-teste-de-unidade-unit-testing)
-  * [1.1 Verificação de lógica atômica em componente/classe isolada](#11-verificação-de-lógica-atômica-em-componenteclasse-isolada)
+  * [1.1 Verificação de Lógica Atômica em Componente Isolado](#11-verificação-de-lógica-atômica-em-componente-isolado)
 * [2. Teste de Integração (Integration Testing)](#2-teste-de-integração-integration-testing)
   * [2.1 Integração Não Incremental (Big Bang)](#21-integração-não-incremental-big-bang)
-  * [2.2 Integração Incremental Top-Down com Stubs](#22-integração-incremental-top-down-com-stubs)
-  * [2.3 Integração Incremental Bottom-Up (Ascendente) com uso de Drivers](#23-integração-incremental-bottom-up-ascendente-com-uso-de-drivers)
-  * [2.4 Teste de Regressão Automatizado](#24-teste-de-regressão-automatizado)
-  * [2.5 Testes de Integração de Fumaça (Smoke Testing)](#25-testes-de-integração-de-fumaça-smoke-testing)
-* [3. Teste de Sistema (System Testing)](#3-teste-de-sistema-system-testing)
-  * [3.1 Testes Funcionais Focado em Casos de Uso](#31-testes-funcionais-focado-em-casos-de-uso)
-  * [3.2 Testes Não Funcionais: Desempenho, Carga e Stress](#32-testes-não-funcionais-desempenho-carga-e-stress)
-  * [3.3 Testes Não Funcionais: Segurança e Penetrabilidade](#33-testes-não-funcionais-segurança-e-penetrabilidade)
-* [4. Teste de Aceitação (Acceptance Testing)](#4-teste-de-aceitação-acceptance-testing)
-  * [4.1 Teste Alpha (Ambiente Interno)](#41-teste-alpha-ambiente-interno)
-  * [4.2 Teste Beta (Ambiente Externo)](#42-teste-beta-ambiente-externo)
-  * [4.3 Teste de Aceitação do Usuário Final / Contratante (UAT)](#43-teste-de-aceitação-do-usuário-final--contratante-uat)
+  * [2.2 Integração Incremental Top-Down (Descendente) com Uso de Stubs](#22-integração-incremental-top-down-descendente-com-uso-de-stubs)
+  * [2.3 Integração Incremental Bottom-Up (Ascendente) com Uso de Drivers](#23-integração-incremental-bottom-up-ascendente-com-uso-de-drivers)
+  * [2.4 Teste de Fumaça (Smoke Testing)](#24-teste-de-fumaça-smoke-testing)
+  * [2.5 Teste de Regressão](#25-teste-de-regressão)
+* [3. Teste de Validação (Validation Testing)](#3-teste-de-validação-validation-testing)
+  * [3.1 Teste Baseado em Casos de Uso (Use Case Testing)](#31-teste-baseado-em-casos-de-uso-use-case-testing)
+  * [3.2 Teste Transversal de Desempenho (Performance Testing)](#32-teste-transversal-de-desempenho-performance-testing)
+  * [3.3 Teste Transversal de Segurança (Security Testing)](#33-teste-transversal-de-segurança-security-testing)
+* [4. Teste de Sistema e Aceitação (System & Acceptance Testing)](#4-teste-de-sistema-e-aceitação-system--acceptance-testing)
+  * [4.1 Teste de Sistema Ponta a Ponta (End-to-End - E2E)](#41-teste-de-sistema-ponta-a-ponta-end-to-end---e2e)
+  * [4.2 Teste Alpha (Alpha Testing)](#42-teste-alpha-alpha-testing)
+  * [4.3 Teste Beta (Beta Testing)](#43-teste-beta-beta-testing)
+  * [4.4 Teste de Aceitação do Usuário (User Acceptance Testing - UAT)](#44-teste-de-aceitação-do-usuário-user-acceptance-testing---uat)
+
+---
 
 ## 1. Teste de Unidade (Unit Testing)
 
@@ -331,6 +334,7 @@ O teste visa identificar:
 2. **Degradação de Contrato:** Modificações acidentais nos formatos de resposta do `VideoCatalogService`.
 3. **Bugs Reincidentes:** Retorno de defeitos que já haviam sido corrigidos em versões anteriores.
 
+---
 
 ## 3. Teste de Validação (Validation Testing)
 
@@ -473,6 +477,7 @@ O teste visa identificar:
 2. **Exposição de URLs Privadas:** Links de streaming (S3/CDN) gerados sem tempo de expiração ou sem assinatura digital (*Pre-signed URLs*).
 3. **Falta de Rate Limiting:** Ausência de controle de requisições por IP, permitindo ataques de força bruta contra o serviço de login.
 
+---
 
 ## 4. Teste de Sistema e Aceitação (System & Acceptance Testing)
 
@@ -526,7 +531,7 @@ sequenceDiagram
 
 ##### Detecção de Defeitos
 O teste visa identificar:
-1. **Falhas em Fronteiras do Sistema:** Incompatibilidades de contrato que ocorrem apenas quando todas as peças do sistema interagem sob uma mesma rede.
+1. **Falhas em Fronteiras do Sistema:** Incompatividades de contrato que ocorrem apenas quando todas as peças do sistema interagem sob uma mesma rede.
 2. **Erros de Estado de Dados:** Dessincronização entre a alteração de status do usuário no banco de dados e a liberação de permissão na API.
 3. **Falhas de Conectividade Extensiva:** Interrupções ou retries falhos na comunicação com CDN ou infraestrutura S3 durante o carregamento.
 
